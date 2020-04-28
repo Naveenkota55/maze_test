@@ -30,7 +30,16 @@ class Player(turtle.Turtle):
         self.speed(0)
         
     def go_up(self):
-        self.goto(self.screen_x)
+        self.goto(self.xcor(), self.ycor()+24)
+    
+    def go_down(self):
+        self.goto(self.xcor(), self.ycor()-24)
+        
+    def go_right(self):
+        self.goto(self.xcor()+24, self.ycor())
+    
+    def go_left(self):
+        self.goto(self.xcor()-24, self.ycor())
 
 levels=[""];
 
@@ -88,6 +97,11 @@ player=Player();
 wall=[];
 
 maze_setup(level);
+
+turtle.listen()
+turtle.onkey(player.go_left,"left")
+turtle.onkey(player.)
+
 
 
 #turn screen updates oof
