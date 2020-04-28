@@ -21,12 +21,21 @@ class Marker(turtle.Turtle):
         self.penup()
         self.speed(0)
 
+class Player(turtle.Turtle):
+    def __init__(self):
+        turtle.Turtle.__init__(self)
+        self.color("blue")
+        self.shape("circle")
+        self.penup()
+        self.speed(0)
+        
+
 levels=[""];
 
 level_1= [
 "XXXXXXXXXXXXXXXXXXXXXXXXX",
-"X XXXXXXXXXXXX  XXX  XXXX",
-"X XXXXXXXXXXXX  XXX    XX",
+"XP  XXXXXXXXXXX  XXX  XXXX",
+"X  XXXXXXXXXXX  XXX    XX",
 "X    XXXXXXXX  XXXXX  XXX",
 "XX   XXXXXXXX          XX",
 "XXXXXXXXXXXXXXXXXXXXXXXXX",
@@ -65,7 +74,12 @@ def maze_setup(level):
             
             if charc=="X":
                 marker.goto(screen_x,screen_y);
-                marker.stamp()
+                marker.stamp();
+                
+            if charc=="P":
+                player.goto(screen_x,screen_y);
+                
 marker=Marker();
 level=levels[1];
+player=Player()
 maze_setup(level);
