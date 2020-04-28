@@ -30,16 +30,31 @@ class Player(turtle.Turtle):
         self.speed(0)
         
     def go_up(self):
-        self.goto(self.xcor(), self.ycor()+24)
+        
+        move_x= self.xcor()
+        move_y= self.ycor()+24
+        if (move_x,move_y) not in wall:
+            self.goto(move_x,move_y)
+        
     
     def go_down(self):
-        self.goto(self.xcor(), self.ycor()-24)
+        move_x= self.xcor()
+        move_y= self.ycor()-24
+        if (move_x,move_y) not in wall:
+            self.goto(move_x,move_y)
+        
         
     def go_right(self):
-        self.goto(self.xcor()+24, self.ycor())
+        move_x= self.xcor()+24
+        move_y= self.ycor()
+        if (move_x,move_y) not in wall:
+            self.goto(move_x,move_y)
     
     def go_left(self):
-        self.goto(self.xcor()-24, self.ycor())
+        ove_x= self.xcor()-24
+        move_y= self.ycor()
+        if (move_x,move_y) not in wall:
+            self.goto(move_x,move_y)
 
 levels=[""];
 
