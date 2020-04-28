@@ -21,7 +21,7 @@ class Marker(turtle.Turtle):
         self.penup()
         self.speed(0)
 
-levels=[];
+levels=[""];
 
 level_1= [
 "XXXXXXXXXXXXXXXXXXXXXXXXX",
@@ -50,14 +50,22 @@ level_1= [
 "XXXXXXXXXXXXXXXXXXXXXXXXX",
 "XXXXXXXXXXXXXXXXXXXXXXXXX",
 ];
-        
+     
 levels.append(level_1);
 
-def setup_maze(level):
-    for y in range(len(level)):
-        for x in range(len(level[y])):
-          print("level[y][x]")  
-            
 
-'''marker=Marker()'''
-setup_maze(levels[1])
+
+            
+def maze_setup(level):
+   for y in range(len(level)):
+       for x in range(len(level[y])):
+            charc=level[y][x];
+            screen_x= -288 + (x*24);
+            screen_y =288- (y*24);
+            
+            if charc=="X":
+                marker.goto(screen_x,screen_y);
+                marker.stamp()
+marker=Marker();
+level=levels[1];
+maze_setup(level);
