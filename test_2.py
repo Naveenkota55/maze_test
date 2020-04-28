@@ -17,7 +17,7 @@ class Marker(turtle.Turtle):
     def __init__(self):
         turtle.Turtle.__init__(self)
         self.color("black")
-        self.shape("circle")
+        self.shape("square")
         self.penup()
         self.speed(0)
 
@@ -29,6 +29,8 @@ class Player(turtle.Turtle):
         self.penup()
         self.speed(0)
         
+    def go_up(self):
+        self.goto(self.screen_x)
 
 levels=[""];
 
@@ -75,11 +77,21 @@ def maze_setup(level):
             if charc=="X":
                 marker.goto(screen_x,screen_y);
                 marker.stamp();
-                
+                wall.append((screen_x,screen_y))
+               
             if charc=="P":
                 player.goto(screen_x,screen_y);
                 
 marker=Marker();
 level=levels[1];
-player=Player()
+player=Player();
+wall=[];
+
 maze_setup(level);
+
+
+#turn screen updates oof
+wn.tracer(0)
+#main game loop
+while True:
+    wn.update()
