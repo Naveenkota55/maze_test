@@ -24,8 +24,8 @@ class Marker(turtle.Turtle):
 class Player(turtle.Turtle):
     def __init__(self):
         turtle.Turtle.__init__(self)
-        self.color("blue")
-        self.shape("circle")
+        self.color("red")
+        self.shape("square")
         self.penup()
         self.speed(0)
         
@@ -99,9 +99,10 @@ wall=[];
 maze_setup(level);
 
 turtle.listen()
-turtle.onkey(player.go_left,"left")
-turtle.onkey(player.)
-
+turtle.onkey(player.go_left,"Left")
+turtle.onkey(player.go_right,"Right")
+turtle.onkey(player.go_up,"Up")
+turtle.onkey(player.go_down,"Down")
 
 
 #turn screen updates oof
