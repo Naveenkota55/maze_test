@@ -60,19 +60,19 @@ levels=[""];
 
 level_1= [
 "XXXXXXXXXXXXXXXXXXXXXXXXX",
-"XP  XXXXXXXXXXX  XXX  XXX",
+"XP  XXXXXXXXXXX  XXX GXXX",
 "X  XXXXXXXXXXX  XXX    XX",
 "X    XXXXXXXX  XXXXX  XXX",
-"XX   XXXXXXXX    X     XX",
+"XX   XXXXXXXX    G     XX",
 "XX   XXXXXXXXXXXX  XXXXXX",
 "XX  XXXXXXXXXXXX  XXXXXXX",
 "XXX                 XXXXX",
-"XXXXXXX   XXXXXX  XXXXXXX",
-"XXXXXXX   XXXXXX  XXXXXXX",
+"XXXXXXX   XXX XX  XXXXXXX",
+"XXXXXXX   XXXGXX  XXXXXXX",
 "XXXX      XXXXXX  XXXXXXX",
 "XXXX      XXXXXX  XXXXXXX",
 "XXXXXXXXXXXXXXXX  XXXXXXX",
-"XXXXX              XXX  X",
+"XXXXX              XXX GX",
 "XXXXX    XXXXXXXXXXXXX  X",
 "XXXXX    XXXXXXXXXXXX  XX",
 "XXXXX                  XX",
@@ -81,8 +81,8 @@ level_1= [
 "XXXXXXXXX      XXXXXXXXXX",
 "XXXXXXXXX            XXXX",
 "XXXXXXXXXXXXXXXXX    XXXX",
-"XXXXX                XXXX",
-"XXXXX   XXXXXXXXXXXXXXXXX",
+"XXXXX               GXXXX",
+"XXXXXG  XXXXXXXXXXXXXXXXX",
 "XXXXXXXXXXXXXXXXXXXXXXXXX",
 ];
      
@@ -105,6 +105,10 @@ def maze_setup(level):
                
             if charc=="P":
                 player.goto(screen_x,screen_y);
+                
+            
+            if charc=="G":
+                player.goto(screen_)
                 
 marker=Marker();
 level=levels[1];
